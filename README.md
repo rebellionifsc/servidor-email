@@ -45,4 +45,30 @@ smtpd_sasl_path = private/auth
 broken_sasl_auth_clients = yes
 home_mailbox = Maildir/
 ```
+Na linha `smtpd_sasl_type = dovecot` identificamos o dovecot como padrão a ser usado.
+
+Para testar o funcionamento, pode ser visto pelo comando telnet a existência de duas novas linhas:
+
+```
+telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 mail.heyceitas.com.br ESMTP Postfix
+EHLO google.com
+250-mail.heyceitas.com.br
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-AUTH PLAIN
+250-AUTH=PLAIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250 DSN
+```
+`250-AUTH PLAIN` e `250-AUTH=PLAIN`, onde a segunda é adicionada pela linha `broken_sasl_auth_clients = yes` para prevenir que ocorra um erro de autenticação a alguns clientes usando versões antigas do Outlook.
+
+
+
 
