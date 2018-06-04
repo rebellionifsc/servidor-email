@@ -67,7 +67,7 @@ EHLO google.com
 250-8BITMIME
 250 DSN
 ```
-`250-AUTH PLAIN` e `250-AUTH=PLAIN`, onde a segunda é adicionada pela linha `broken_sasl_auth_clients = yes` para prevenir que ocorra um erro de autenticação a alguns clientes usando versões antigas do Outlook.
+`250-AUTH PLAIN` e `250-AUTH=PLAIN`, onde a segunda é adicionada pela linha `broken_sasl_auth_clients = yes`, para prevenir que ocorra um erro de autenticação a alguns clientes usando versões antigas do Outlook.
 
 
 
