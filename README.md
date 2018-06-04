@@ -22,6 +22,8 @@ No arquivo syslog foi encontrado o seguinte erro:
 postfix/smtpd[13801]: warning: SASL authentication failure: Password verification failed
 postfix/smtpd[13801]: warning: mail-qt0-f177.google.com[209.85.216.177]: SASL PLAIN authentication failed: authentication failure
 `
+
+
 Descobrimos que o postfix, por padrão, faz uso do sistema Cyrus para fazer a configuração da autenticação SASL. Parte da documentação da DigitalOcean adiciona ao arquivo master.cf algumas linhas para mudar a configuração padrão do postfix para fazer uso do dovecot, mas por algum motivo as mudanças feitas no arquivo master.cf não vingaram. Para solucionar o problema, adicionamos algumas linhas ao arquivo main.cf do Postfix:
 
 `
