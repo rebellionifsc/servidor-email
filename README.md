@@ -39,10 +39,10 @@ inet_interfaces = all
 
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
-smtpd_sasl_auth_enable = yes
+**smtpd_sasl_auth_enable = yes
 smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/auth
-broken_sasl_auth_clients = yes
+broken_sasl_auth_clients = yes**
 home_mailbox = Maildir/
 ```
 Na linha `smtpd_sasl_type = dovecot` identificamos o dovecot como padrão a ser usado.
